@@ -6,3 +6,7 @@ body {
 text-decoration: none;
 
 }
+
+.maxWidth300 {
+    max-width: 300px;
+}
