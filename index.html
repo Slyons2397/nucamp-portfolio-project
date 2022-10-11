@@ -51,14 +51,14 @@
                                 </div>
                                 <div class="col-sm-3 my-auto text-center">
                                     <p>Price</p>
-                                    <p>$2.99</p>
+                                    <p>$3.00</p>
                                 </div>
                                 <div class="col-sm-3 my-auto text-center">
                                     <p>Quantity</p>
                                     <div class="input-group input-group-sm mb-3 w-25 mx-auto">
                                         <div class="input-group-prepend">
                                         </div>
-                                        <input type="number" min="0" max="5" class="form-control text-center" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                        <input id="hotCoffeeAmount" type="number" min="0" max="5" class="form-control text-center" placeholder="0">
                                       </div>
                                 </div>
                             </div>
@@ -72,14 +72,14 @@
                                 </div>
                                 <div class="col-sm-3 my-auto text-center">
                                     <p>Price</p>
-                                    <p>$3.99</p>
+                                    <p>$4.00</p>
                                 </div>
                                 <div class="col-sm-3 my-auto text-center">
                                     <p>Quantity</p>
                                     <div class="input-group input-group-sm mb-3 w-25 mx-auto">
                                         <div class="input-group-prepend">
                                         </div>
-                                        <input type="number" id="hotCoffeeAmount" min="0" max="5" class="form-control text-center" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                        <input id="icedCoffeeAmount" type="number" id="hotCoffeeAmount" min="0" max="5" class="form-control text-center" placeholder="0">
                                       </div>
                                 </div>
                             </div>
@@ -93,20 +93,26 @@
                                 </div>
                                 <div class="col-sm-3 my-auto text-center">
                                     <p>Price</p>
-                                    <p>$6.99</p>
+                                    <p>$6.00</p>
                                 </div>
                                 <div class="col-sm-3 my-auto text-center">
                                     <p>Quantity</p>
                                     <div class="input-group input-group-sm mb-3 w-25 mx-auto">
                                         <div class="input-group-prepend">
                                         </div>
-                                        <input type="number" min="0" max="5" class="form-control text-center" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                        <input id="foodAmount" type="number" min="0" max="5" class="form-control text-center" placeholder="0">
                                       </div>
                                 </div>
                             </div>
                             <div class="row mt-5 mb-3">
                                 <div class="col text-center">
-                                    <button class="btn btn-dark text-nowrap placeOrderButton">Place Order</button>
+                                    <p id="total">Your total is:</p>
+                                </div>
+                            </div>
+                            <div class="row mt-5 mb-3">
+                                <div class="col text-center">
+                                    <button class="btn btn-dark text-nowrap updateCartButton">Update Cart</button>
+                                    <button class="btn btn-success text-nowrap placeOrderButton">Place Order</button>
                                 </div>
                             </div>
                         </div>
