@@ -22,13 +22,14 @@ $(document).ready(function() {
     }));
     $(".homeButton").on('click',(function(){
         $("#thankModal").modal('hide');
+        $("#confirmModal").modal('hide');
     }));
 });
 
 let orderTime = document.querySelector('#orderTime');
 let today = new Date();
 let hour = today.getHours();
-let newHour = today.getHours() % 12 || 12;
+let twelveHour = today.getHours() % 12 || 12;
 let leadMin = '';
 let minutes = today.getMinutes();
 let timeOfDay = '';
@@ -46,4 +47,4 @@ if (hour > 12){
     timeOfDay = 'AM';
 };
 
-orderTime.textContent = `Your order was submitted at: ${newHour}:${leadMin}${minutes} ${timeOfDay}`;
+orderTime.textContent = `Your order was submitted at: ${twelveHour}:${leadMin}${minutes} ${timeOfDay}`;
