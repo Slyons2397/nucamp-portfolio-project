@@ -33,6 +33,7 @@ let hour = today.getHours();
 let twelveHour = today.getHours() % 12 || 12;
 let leadMin = '';
 let minutes = today.getMinutes();
+let newMinutes = minutes + 15
 let timeOfDay = '';
 let updateCartButton = document.querySelector(".updateCartButton");
 let hotCoffeeAmount = document.querySelector("#hotCoffeeAmount")
@@ -40,6 +41,8 @@ let icedCoffeeAmount = document.querySelector("#icedCoffeeAmount")
 let foodAmount = document.querySelector("#foodAmount")
 let total = document.querySelector("#total")
 let placeOrderButton = document.querySelector(".placeOrderButton")
+let pickUpTime = document.querySelector("#pickUpTime")
+
 
 
 placeOrderButton.addEventListener('click', function(){
@@ -79,4 +82,34 @@ if (hour > 12){
     timeOfDay = 'AM';
 };
 
-orderTime.textContent = `Your order was submitted at: ${twelveHour}:${leadMin}${minutes} ${timeOfDay}`;
+
+function minuteCorrection(minutes){
+    if(minutes >= 60){
+        let pickUpMinutes = minutes % 60
+        return pickUpMinutes
+    }
+}
+
+pickUpMins = minuteCorrection(newMinutes)
+
+
+if (pickUpMins === undefined){
+    pickUpMins = `${newMinutes}`
+}
+
+pickNum = parseFloat(pickUpMins)
+
+if(pickNum <= 14){
+    newHour = twelveHour + 1
+}else {
+    newHour = twelveHour
+}
+
+if (pickNum <= 10){
+    pickUpLead = '0'
+}else {
+    pickUpLead = ''
+}
+
+orderTime.textContent = `Your order was submitted at: ${twelveHour}:${leadMin}${minutes} ${timeOfDay}` 
+pickUpTime.textContent = `Your order will be ready by ${newHour}:${pickUpLead}${pickUpMins} ${timeOfDay}`
